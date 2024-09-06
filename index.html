@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Counseling</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for footer and quiz */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+        .quiz-container.hidden {
+            display: none;
+        }
+        .selected {
+            background-color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="/Users/meghrajsinhchauhan/Downloads/logo.png" alt="Career Counseling Logo">
+                <span>CareerExploreHub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="career-options-after-10th.html">Career Options After 10th</a></li>
+                    <li><a href="career-options-after-12th.html">Career Options After 12th</a></li>
+                    <li><a href="trending-careers.html">Trending Careers</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        
+
+       <!-- Welcome Section -->
+<section id="welcome" class="section welcome-section">
+    <div class="welcome-content">
+        <div class="welcome-text">
+            <h1>Welcome to Your Future</h1>
+            <p>Discover a world of career possibilities with us! Explore various career opportunities and gain detailed insights into specific fields, all based on comprehensive data. Choose the path that's right for you with our expert guidance and resources.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Our Services Section -->
+<section id="our-services" class="section">
+    <h2 class="section-title">Our Services</h2>
+    <div class="service-card">
+        <h3>Career Options After 10th</h3>
+        <p>Discover a range of career paths and educational opportunities available after completing 10th grade. Our platform offers detailed insights to help you make informed decisions about your future.</p>
+    </div>
+    <div class="service-card">
+        <h3>Career Options After 12th</h3>
+        <p>Explore various career avenues and higher education options available after completing 12th grade. We provide comprehensive information to guide you in choosing the right path for your career goals.</p>
+    </div>
+    <div class="service-card">
+        <h3>Trending Careers</h3>
+        <p>Stay informed about the latest career trends and in-demand professions. Our insights help you understand emerging career opportunities and the skills needed to succeed in these fields.</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section">
+    <h2 class="section-title">About Us</h2>
+    <button id="about-button" class="about-button">Learn More</button>
+    <div id="about-details" class="about-details">
+        <p>Welcome to our career exploration platform! We are dedicated to helping you uncover a wide range of career opportunities tailored to your interests and goals. Our website provides detailed information about:</p>
+        <ul>
+            <li><strong>Career Options After 10th Grade:</strong> Explore diverse career paths available after completing your 10th grade education.</li>
+            <li><strong>Career Options After 12th Grade:</strong> Discover various opportunities and fields you can pursue after finishing your 12th grade.</li>
+            <li><strong>Trending:</strong> Stay updated with the latest trends and in-demand careers in the current job market.</li>
+        </ul>
+        <p>Our platform offers comprehensive data and insights to guide you in making informed decisions about your future career. Let us help you find the path that aligns with your passion and aspirations!</p>
+    </div>
+</section>
+
+   
+<section id="Career-options-10th" class="section">
+    <h2 class="section-title">Career Options After 10th</h2>
+    <div class="interactive-card" data-link="career-options-after-10th.html">
+        <strong>Explore Career Options After 10th</strong>
+        <p>Click for detailed information on career options available after 10th grade.</p>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.interactive-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+            window.location.href = this.getAttribute('data-link');
+        });
+    });
+});
+
+</script>
+        
+
+        <section id="Career-options-12th" class="section">
+            <h2 class="section-title">Career Options After 12th</h2>
+            <div class="card">
+                <h3>Select an Option</h3>
+                <div class="button-group">
+                    <button onclick="window.location.href='science-stream-pcm.html'">Science Stream (PCM)</button>
+                    <button onclick="window.location.href='science-stream-pcb.html'">Science Stream (PCB)</button>
+                   
+                    <button onclick="window.location.href='commerce-stream.html'">Commerce Stream</button>
+                    <button onclick="window.location.href='arts-stream.html'">Arts Stream</button>
+                    <button onclick="window.location.href='other-career-options.html'">Other Career Options</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="trending - careers" class="section">
+            <h2 class="section-title">Trending</h2>
+            <div class="card">
+                <h3>
+                    <a href="trending-careers.html" class="button-link trending-careers-link">Explore Trending Careers</a>
+                </h3>
+            </div>
+        </section>
+        
+   <!-- Career Quiz Section -->
+   <section id="career-quiz" class="section">
+    <h2 class="section-title">Career Quiz</h2>
+    <div class="quiz-container">
+        <p>Take this quiz to find out which career path suits you best!</p>
+        <button class="start-quiz-btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div id="quiz" class="quiz-container hidden">
+        <div id="question-container">
+            <p id="question"></p>
+            <div id="answers"></div>
+        </div>
+        <button id="next-btn" class="hidden" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="result" class="quiz-container hidden">
+        <div class="result-popup">
+            <p>Your ideal career path is: <span id="career-result"></span> 🎉</p>
+            <button id="restart-btn" class="hidden" onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CareerExploreHub. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script> <!-- Add this line -->
+
+    <script>
+       // Quiz data
+       const quizData = [
+            {
+                question: "What do you enjoy doing in your free time?",
+                answers: [
+                    { text: "Reading and researching", career: "researcher" },
+                    { text: "Creating art or writing", career: "Artist/Writer" },
+                    { text: "Solving problems and puzzles", career: "Engineer" },
+                    { text: "Helping others", career: "Doctor/Teacher" }
+                ]
+            },
+            {
+                question: "Which subject do you excel in?",
+                answers: [
+                    { text: "Mathematics", career: "Engineer" },
+                    { text: "Biology", career: "Doctor" },
+                    { text: "Literature", career: "Writer" },
+                    { text: "History", career: "Historian" }
+                ]
+            },
+            {
+                question: "What type of environment do you prefer?",
+                answers: [
+                    { text: "Office or lab-based", career: " researcher" },
+                    { text: "Outdoors or physical work", career: "Architect" },
+                    { text: "Artistic and creative settings", career: "Artist" },
+                    { text: "Corporate or business settings", career: "Manager" }
+                ]
+            },
+            {
+                question: "What skills do you want to develop?",
+                answers: [
+                    { text: "Technical and analytical skills", career: "Engineer" },
+                    { text: "Creative and communication skills", career: "Journalist" },
+                    { text: "Medical and people skills", career: "Doctor" },
+                    { text: "Leadership and management skills", career: "Manager" }
+                ]
+            }
+        ];
+    
+        let currentQuestionIndex = 0;
+        let careerScores = {};
+    
+        function startQuiz() {
+            console.log("Starting quiz...");
+            document.querySelector('.quiz-container').classList.add('hidden');
+            document.getElementById('quiz').classList.remove('hidden');
+            showQuestion();
+        }
+    
+        function showQuestion() {
+            const questionData = quizData[currentQuestionIndex];
+            document.getElementById('question').innerText = questionData.question;
+            const answersContainer = document.getElementById('answers');
+            answersContainer.innerHTML = "";
+            questionData.answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.innerText = answer.text;
+                button.onclick = () => selectAnswer(answer.career, button);
+                answersContainer.appendChild(button);
+            });
+        }
+    
+        function selectAnswer(career, button) {
+            console.log(`Selected career: ${career}`);
+            // Remove 'selected' class from all buttons
+            Array.from(document.getElementById('answers').children).forEach(btn => btn.classList.remove('selected'));
+            // Highlight selected button
+            button.classList.add('selected');
+            // Update career scores
+            careerScores[career] = (careerScores[career] || 0) + 1;
+            console.log(`Career scores: ${JSON.stringify(careerScores)}`);
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+    
+        function nextQuestion() {
+            const selectedButton = document.querySelector('#answers .selected');
+            if (!selectedButton) {
+                alert("Please select an answer!");
+                return;
+            }
+            currentQuestionIndex++;
+            document.getElementById('next-btn').classList.add('hidden');
+            if (currentQuestionIndex < quizData.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+    
+        function showResult() {
+            console.log("Displaying result...");
+            document.getElementById('quiz').classList.add('hidden');
+            const resultContainer = document.getElementById('result');
+            resultContainer.classList.remove('hidden');
+            let maxScore = 0;
+            let careerResult = "";
+            for (let career in careerScores) {
+                if (careerScores[career] > maxScore) {
+                    maxScore = careerScores[career];
+                    careerResult = career;
+                }
+            }
+            const careerResultElement = document.getElementById('career-result');
+            if (careerResult) {
+                careerResultElement.innerText = careerResult;
+            } else {
+                careerResultElement.innerText = "No career selected.";
+            }
+            document.getElementById('restart-btn').classList.remove('hidden');
+        }
+    
+        function restartQuiz() {
+            console.log("Restarting quiz...");
+            currentQuestionIndex = 0;
+            careerScores = {};
+            document.getElementById('result').classList.add('hidden');
+            document.getElementById('quiz').classList.remove('hidden');
+            showQuestion();
+        }
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const aboutButton = document.getElementById('about-button');
+    const aboutDetails = document.getElementById('about-details');
+
+    aboutButton.addEventListener('click', () => {
+        if (aboutDetails.style.display === 'none' || aboutDetails.style.display === '') {
+            aboutDetails.style.display = 'block';
+        } else {
+            aboutDetails.style.display = 'none';
+        }
+    });
+});
+</script>
+
+
+</body>
+</html>
