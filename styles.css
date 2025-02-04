@@ -1,4 +1,9 @@
 /* Global Styles */
+*{
+font-family: fantasy;
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #eaeaea;
@@ -12,7 +17,7 @@ header {
     background-color: #222;
     color: #fff;
     padding: 1rem 2rem;
-    position: sticky;
+    position: relative;
     top: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -391,7 +396,7 @@ footer {
 
 /* Welcome Section Styles */
 .welcome-section {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background:linear-gradient(to right, #7a00ff, #000000);
     color: #fff;
     text-align: center;
     padding: 60px 20px;
@@ -414,7 +419,7 @@ footer {
 }
 
 .welcome-text p {
-    font-family: 'Lora', serif;
+    /* font-family: 'Lora', serif; */
     font-size: 1.2em;
     line-height: 1.6;
     margin: 0 auto;
