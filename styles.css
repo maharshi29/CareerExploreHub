@@ -46,7 +46,7 @@ nav ul li {
     margin: 0 1.5rem;
 }
 
-nav ul li a {
+/* nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
@@ -75,6 +75,37 @@ nav ul li a:hover {
 nav ul li a:hover::before {
     width: 100%;
     left: 0;
+} */
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+    padding: 0.5rem;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6600;
+    transition: width 0.3s, transform 0.3s;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+    transform: translateY(-2px);
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+    transform: translateX(-50%);
 }
 
 /* Main Content */
